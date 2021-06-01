@@ -4,6 +4,9 @@ import "./ControlButtons.css";
 const ControlButtons = (props) => {
 
     const [buttonState, setButtonState] = useState(true)
+    const [words, setWords] = useState('')
+
+    const numberOfWords = words.split(' ').length;
 
     const handleStart = () => {
         props.handleStart()
@@ -20,10 +23,23 @@ const ControlButtons = (props) => {
         </div>
     )
 
+    const handleChange = (e) => {
+        e.preventDefault();
+        alert('Paste Is Not Allowed')
+    };
+
     return (
-        <div>
-            <div className="btnParent">{props.active ? PauseButton : StartButton}</div>
-            <input className='input' disabled={buttonState || props.isPaused} type="text" placeholder="Type The Text Here" />
+        <div className='buttons'>
+            <h1>{numberOfWords}</h1>
+            <div className='button'>{props.active ? PauseButton : StartButton}</div>
+            <textarea className='input'
+                onChange={event => setWords(event.target.value)}
+                disabled={buttonState || props.isPaused}
+                onPaste={handleChange}
+                type="text"
+                placeholder="Type The Text Here"
+                rows='16'
+            />
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import Stopwatch from "./Stopwatch/Stopwatch";
 import Text from "./Text/Text";
-import './App.css';
 
 function App() {
   return (
@@ -9,10 +8,10 @@ function App() {
       <header>
         <Stopwatch />
       </header>
-      <div className='text'>
-          <Text />
-        </div>
+      <div>
+        <Text />
       </div>
+    </div>
   );
 }
 

@@ -13,14 +13,16 @@ color: #f5f5f5;
 background-color: #e42a2a;
 }
 
-.btnParent {
+.buttons {
+   width: 100%
+
+}
+
+.button {
     display: flex;
-    flex-direction: column;
-    align-items:flex-end;
+    justify-content: flex-end;
 }
 
 .input {
-    margin: 0.5em,0.5em;
-    width: 101em;
-    height:2em
+    width: 99%;
 }

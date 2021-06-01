@@ -1,6 +1,5 @@
 .text-wrapper {
     margin: 0.50em;
-    margin-top: 4em;
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 17em;
+    color: black;
 }

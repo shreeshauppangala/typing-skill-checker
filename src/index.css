@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ /* background: linear-gradient(89deg,#6a73c7, #d87d1673); */
+ background:url(https://onlinetyping.org/images/typing-test.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 code {
