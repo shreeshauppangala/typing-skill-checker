@@ -4,10 +4,13 @@ import Timer from "./Timer/Timer";
 import ControlButtons from "./ControlButtons/ControlButtons"
 import "./StopWatch.css";
 
-const Stopwatch = () => {
+const Stopwatch = (props) => {
     const [isActive, setIsActive] = useState(false);
     const [isPaused, setIsPaused] = useState(true);
     const [time, setTime] = useState(0);
+    const [startTime, setStartTime] = useState(moment());
+    const [endTime, setEndTime] = useState(moment())
+    const [timeTaken, setTimeTaken] = useState(moment())
 
     useEffect(() => {
         let interval = null;
@@ -26,24 +29,28 @@ const Stopwatch = () => {
     const handleStart = () => {
         setIsActive(true);
         setIsPaused(false);
-        moment('')
-        console.log(moment())
+        setStartTime(moment())
     };
 
     const handlePauseResume = () => {
-        setIsPaused(!isPaused);
-        moment('')
-        console.log(moment())
+        setIsPaused(!isPaused)
+        setEndTime(moment())
+        setTimeTaken(moment.duration(endTime.diff(startTime)).asMinutes())
+        console.log(setTimeTaken)
     };
+
+        let wordsPerMinute =props.numberOfWords/timeTaken
+        console.log(wordsPerMinute)
 
     return (
         <div className="stop-watch">
             <Timer time={time} />
-             <ControlButtons
+            <ControlButtons
                 active={isActive}
                 isPaused={isPaused}
                 handleStart={handleStart}
                 handlePauseResume={handlePauseResume}
+                // onChange={onChange}
             />
         </div>
     );

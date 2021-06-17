@@ -5,7 +5,7 @@ import "./Text.css";
 const Text = () => {
     return <div className="text-wrapper">
         <LoremIpsum p={3} />
-        </div>
+    </div>
 }
 
 export default Text
