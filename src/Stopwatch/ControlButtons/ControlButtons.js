@@ -3,20 +3,22 @@ import "./ControlButtons.css";
 
 const ControlButtons = (props) => {
 
+    const { numberOfWords, handlePauseResume, active, handleStart, setWords, isPaused } = props
+
     const [buttonState, setButtonState] = useState(true)
 
     return (
         <div className='buttons'>
-            <h1>Number Of Words Written = { props.numberOfWords }</h1>
-            <div className='button'>{ props.active ? <div className="btn" onClick={ props.handlePauseResume }>
-                { props.isPaused ? "Resume" : "Pause" }
+            <h1>Number Of Words Written = { numberOfWords }</h1>
+            <div className='button'>{ active ? <div className="btn" onClick={ handlePauseResume }>
+                { isPaused ? "Resume" : "Pause" }
             </div> : <div className="btn" onClick={ () => {
-                props.handleStart()
+                handleStart()
                 setButtonState(!buttonState)
             } }>Start</div> }</div>
             <textarea className='input'
-                onChange={ event => props.setWords(event.target.value) }
-                disabled={ buttonState || props.isPaused }
+                onChange={ event => setWords(event.target.value) }
+                disabled={ buttonState || isPaused }
                 onPaste={ (e) => {
                     e.preventDefault();
                     alert('Paste Is Not Allowed')
