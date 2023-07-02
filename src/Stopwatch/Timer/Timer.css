@@ -4,19 +4,19 @@
 }
 
 .hour {
-	color: rgb(202, 29, 173);
+	color: #ca1dad;
 }
 
 .minute {
-	color:rgb(81, 81, 211)
+	color:#5151d3
 }
 
 .second {
-	color:rgb(197, 115, 56)
+	color:#c57338
 }
 
 .milSec{
-	color:rgb(236, 20, 64)
+	color:#ec1440
 }
 
 
